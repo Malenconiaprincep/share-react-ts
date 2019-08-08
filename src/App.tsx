@@ -3,7 +3,7 @@ import EventComponent from './demo/event'
 import { http1 } from './demo/fetch/fetch1';
 import { http2 } from './demo/fetch/fetch2';
 import { http3 } from './demo/fetch/fetch3';
-import { get } from './demo/fetch/fetch4';
+import { get, post } from './demo/fetch/fetch4';
 import SfcComponent from './demo/sfc'
 import StateComponent from './demo/state'
 
@@ -36,17 +36,21 @@ export default class App extends React.Component {
 
     const res1 = await http2<ITodo[]>(api)
     console.log('fetch2 >>> 输出')
-    console.log(res1[0])
+    console.log(res1)
     // console.log(res1[0].aa)
 
     const res2 = await http3<ITodo[]>(api)
     console.log('fetch3 >>> 输出')
-    console.log(res2[0])
+    console.log(res2.parsedBody)
 
 
     const res3 = await get<ITodo[]>(api)
     console.log('get >>> 输出')
-    console.log(res3[0])
+    console.log(res3.parsedBody)
+
+    const res4 = await post<ITodo[]>('/api/detail/3', {})
+    console.log('post >>> 输出')
+    console.log(res4.parsedBody)
   }
 
   public render() {

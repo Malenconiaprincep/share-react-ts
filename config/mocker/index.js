@@ -24,7 +24,7 @@ const proxy = {
             pic: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1563349489&di=3a88bfff41be2072fc67379f197f1b33&imgtype=jpg&er=1&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fblog%2F201509%2F24%2F20150924124903_dfQjr.jpeg'
         }
     },
-    'GET /api/detail/3': {
+    'POST /api/detail/3': {
         ret_code:0, 
         data: {
             title: 'testfewfew',
